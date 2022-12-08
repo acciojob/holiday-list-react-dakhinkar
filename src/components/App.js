@@ -52,6 +52,7 @@ class App extends Component {
             <li key={`location${index + 1}`}>{item.name}</li>
           ))}
         </ol>
+        
       </div>
     );
   }
