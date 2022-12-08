@@ -38,18 +38,18 @@ class App extends Component {
   }
 
   render() {
-   var indianLocations = this.cityList.filter(
-      (city, index) => city.country === "India"
-    );
-    var otherLocations = this.cityList.filter(
-      (city, index) => city.country !== "India"
-    );
-    var cities = [...indianLocations, ...otherLocations];
+  var indianLocations = this.cityList.filter((item, index) => {
+      return item.country === "India";
+    });
+    var otherLocations = this.cityList.filter((item, index) => {
+      return item.country !== "India";
+    });
+    var newList = [...indianLocations, ...otherLocations];
     return (
       <div id="main">
         <ol>
-          {cities.map((city, index) => (
-            <li key={`location${index + 1}`}>{city.name}</li>;
+          {newList.map((item, index) => (
+            <li key={`location${index + 1}`}>{item.name}</li>
           ))}
         </ol>
       </div>
